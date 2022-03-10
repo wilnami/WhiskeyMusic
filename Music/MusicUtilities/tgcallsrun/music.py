@@ -79,15 +79,15 @@ async def on_stream_end(client: PyTgCalls, update: Update) -> None:
             f3 = (afk[2])
             finxx = (f"{f1}{f2}{f3}")
             if str(finxx) != "raw":  
-                mystic = await app.send_message(chat_id, "Downloading Next Music From Playlist....")
+                mystic = await app.send_message(chat_id, "mengunduh musik berikutnya...")
                 url = (f"https://www.youtube.com/watch?v={afk}")
                 ctitle = (await app.get_chat(chat_id)).title
-                logger_text=f"""Playing Next From Playlist
+                logger_text=f"""playlist hadeh
 
-Group :- {chat_id}
-Title :- {ctitle}
+grup :- {chat_id}
+nama lagu :- {ctitle}
 
-Downloading....
+sedang menghadeh....
 
 {url}"""
                 okay = await app.send_message(LOG_GROUP_ID, f"{logger_text}", disable_web_page_preview=True)
@@ -95,7 +95,7 @@ Downloading....
                     with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
                         x = ytdl.extract_info(url, download=False)
                 except Exception as e:
-                    return await mystic.edit(f"Failed to download this video.\n\n**Reason**:{e}") 
+                    return await mystic.edit(f"coba lagi banh") 
                 
                 chat_title = ctitle                
                 videoid = afk
@@ -115,22 +115,22 @@ Downloading....
                             flex[str(bytesx)] = 1
                         if flex[str(bytesx)] == 1:
                             flex[str(bytesx)] += 1
-                            mystic.edit(f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                            mystic.edit(f"ini lagunya banh {title[:50]}\n\n**ukuran:** {size}\n**menghadeh:** {percentage}\n**tapi bentar banh:** {speed}\n**tunggu:** {eta} detik lagi")
                         if per > 500:    
                             if flex[str(bytesx)] == 2:
                                 flex[str(bytesx)] += 1
-                                mystic.edit(f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                                print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
+                                mystic.edit(f"ini lagunya banh {title[:50]}...\n\n**ukuran:** {size}\n**menghadeh:** {percentage}\n**tapi bentar banh:** {speed}\n**tunggu:** {eta} detik lagi")
+                                print(f"[{videoid}] sedang menghadeh {percentage} dengan kecepatan {speed} di gc {chat_title} | tunggu: {eta} detik lagi")
                         if per > 800:    
                             if flex[str(bytesx)] == 3:
                                 flex[str(bytesx)] += 1
-                                mystic.edit(f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                                print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
+                                mystic.edit(f"ini lagunya banh {title[:50]}....\n\n**ukuran:** {size}\n**menghadeh:** {percentage}\n**tapi bentar banh:** {speed}\n**tunggu:** {eta} detik lagi")
+                                print(f"[{videoid}] sedang menghadeh {percentage} dengan kecepatan {speed} in {chat_title} | tunggu: {eta} detik lagi")
                         if per == 1000:    
                             if flex[str(bytesx)] == 4:
                                 flex[str(bytesx)] = 1
-                                mystic.edit(f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec") 
-                                print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
+                                mystic.edit(f"ini lagunya banh {title[:50]}.....\n\n**ukuran:** {size}\n**menghadeh:** {percentage}\n**tapi bentar banh:** {speed}\n**tunggu:** {eta} detik lagi") 
+                                print(f"[{videoid}] sedang menghadeh {percentage} dengan kecepatan {speed} in {chat_title} | tunggu: {eta} detik lagi")
                 loop = asyncio.get_event_loop()
                 xx = await loop.run_in_executor(None, download, url, my_hook)
                 file = await convert(xx)
@@ -167,7 +167,7 @@ Downloading....
                     InputStream(
                         InputAudioStream(
                             afk,
-                        ),
+                        ),  
                     ),
                 )
                 _chat_ = ((str(afk)).replace("_","", 1).replace("/","", 1).replace(".","", 1))
@@ -189,9 +189,9 @@ Downloading....
                 photo=f"downloads/{_chat_}final.png",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 caption=f"""
-<b>▶️ Sekarang memutar:</b> {title}
-<b>⌚ Durasi:</b> {duration}
-<b>🎧 Atas permintaan:</b> {username}
+<b>▶️ nama lagu:</b> {title}
+<b>⌚ durasi:</b> {duration}
+<b>🎧 atas permintaan:</b> {username} hadeh
 """,
                 )
                 return
