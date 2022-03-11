@@ -155,7 +155,7 @@ async def stop_cmd(_, message):
             pass                        
         await remove_active_chat(chat_id)
         await music.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text(f"**hadeh parah bat lu {checking}!**") 
+        await message.reply_text(f"**hadeh parah bat lu {checking}**") 
     else:
         return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
     
