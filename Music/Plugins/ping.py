@@ -13,6 +13,8 @@ async def bot_sys_stats():
     mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
     stats = f"""
+ping juga :v
+
 Waktu aktif: {get_readable_time((bot_uptime))}
 CPU: {cpu}%
 RAM: {mem}%

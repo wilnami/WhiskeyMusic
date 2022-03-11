@@ -155,7 +155,7 @@ async def stop_cmd(_, message):
             pass                        
         await remove_active_chat(chat_id)
         await music.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text(f"**🎧 Obrolan Suara Berakhir/Dihentikan {checking}!**") 
+        await message.reply_text(f"**hadeh parah bat lu {checking}!**") 
     else:
         return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
     
@@ -171,12 +171,12 @@ async def stop_cmd(_, message):
     chat_id = message.chat.id
     chat_title = message.chat.title
     if not await is_active_chat(chat_id):
-        await message.reply_text("Tidak ada music yang diputar")
+        await message.reply_text("mana musiknya cug 🗿")
     else:
         task_done(chat_id)
         if is_empty(chat_id):
             await remove_active_chat(chat_id)
-            await message.reply_text("Tidak ada lagi musik di __Queue__ \n\nMeninggalkan Obrolan Suara")
+            await message.reply_text("saia off dulu 🗿")
             await music.pytgcalls.leave_group_call(chat_id)
             return  
         else:
@@ -186,7 +186,7 @@ async def stop_cmd(_, message):
             f3 = (afk[2])
             finxx = (f"{f1}{f2}{f3}")
             if str(finxx) != "raw":   
-                mystic = await message.reply_text("Musik sedang diputar Daftar Putar...\n\nMengunduh Musik Berikutnya Dari Daftar Putar....")
+                mystic = await message.reply_text("tunggu banh....")
                 url = (f"https://www.youtube.com/watch?v={afk}")
                 try:
                     with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
@@ -310,5 +310,5 @@ async def reload(_, message):
     chat_id = message.chat.id
     await _.send_message(
     chat_id,
-    "✅ Bot dimulai ulang **berhasil**\n\n✅ **Admin** daftar telah **diperbarui**"
+    "✅ berhasil merestart**"
 )

@@ -196,7 +196,7 @@ Kembalikan kembali ke Akun Pengguna Dari Hak Admin.
     global useer
     if chat_id in DISABLED_GROUPS:
         return await message.reply_text(
-            f"😕 **Maap {message.from_user.mention}, Musicnya Dimatiin Sama Admin**" 
+            f"😕 **Maaf {message.from_user.mention}, Musicnya Dimatiin Sama Admin**" 
         )
         return
     user_id = message.from_user.id
@@ -216,12 +216,7 @@ Kembalikan kembali ke Akun Pengguna Dari Hak Admin.
     if a.status != "administrator":
         await message.reply_text(
             """
-Saya perlu menjadi admin dengan beberapa izin:
-
-- **dapat mengelola obrolan suara:** Untuk mengelola obrolan suara
-- **dapat menghapus pesan:** Untuk menghapus Sampah yang Dicari Musik
-- **dapat mengundang pengguna**: Untuk mengundang asisten untuk mengobrol
-- **dapat membatasi anggota**: Untuk Melindungi Musik dari Spam.
+jadikan saia admin cug 🗿
 """
         )
         return

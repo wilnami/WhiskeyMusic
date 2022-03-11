@@ -104,7 +104,7 @@ Kemungkinan alasannya bisa** :{e}
         return
     if CallbackQuery.from_user.id != int(user_id):
         await CallbackQuery.answer(
-            "Anda tidak diizinkan untuk menutup memu ini", show_alert=True
+            "lagi ngapain banh 🗿", show_alert=True
         )
         return
     await CallbackQuery.message.delete()
@@ -118,7 +118,7 @@ async def pausevc(_, CallbackQuery):
     )
     if not a.can_manage_voice_chats:
         return await CallbackQuery.answer(
-            "Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\n• ❌ MENGELOLA OBROLAN SUARA",
+            "lagi ngapain banh 🗿",
             show_alert=True,
         )
     CallbackQuery.from_user.first_name
@@ -132,14 +132,14 @@ async def pausevc(_, CallbackQuery):
             user_name = CallbackQuery.from_user.first_name
             rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
             await CallbackQuery.message.reply(
-                f"🎧 Lagu Dijeda oleh {rpk}!", reply_markup=play_keyboard
+                f"🎧 mana lanjutannya cug {rpk} 🗿", reply_markup=play_keyboard
             )
             await CallbackQuery.message.delete()
         else:
-            await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
+            await CallbackQuery.answer(f"play dulu musiknya cug 🗿", show_alert=True)
             return
     else:
-        await CallbackQuery.answer(f"Tidak ada yang diputar di Musik!", show_alert=True)
+        await CallbackQuery.answer(f"play dulu musiknya cug 🗿", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("resumevc"))
@@ -329,11 +329,11 @@ Gagal mengunduh video ini.
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
                         f"""
-<b>⏭️ Melewati lagu permintaa {rpk}</b>
+<b>⏭️ napa malah lu skip cug {rpk} 🗿</b>
 
-<b>🏷 Nama: </b>[{title[:25]}]({url})
-<b>⏱️ Durasi: :</b> {duration}
-<b>🎧 Atas permintaan:</b> {semx.mention}
+<b>🏷 nama: </b>[{title[:25]}]({url})
+<b>⏱️ durasi: :</b> {duration}
+<b>🎧 yang ngeskip:</b> {semx.mention}
 """
                     ),
                 )
@@ -410,7 +410,7 @@ async def stopvc(_, CallbackQuery):
         user_id = CallbackQuery.from_user.id
         user_name = CallbackQuery.from_user.first_name
         rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-        await CallbackQuery.message.reply(f"🎧 Lagu Dihentikan oleh {rpk}!")
+        await CallbackQuery.message.reply(f"🎧 hadeh {rpk}!")
     else:
         await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
 
