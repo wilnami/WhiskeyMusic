@@ -11,7 +11,7 @@ async def LOG_CHAT(message, what):
     user_name = message.from_user.first_name
     mention = "["+user_name+"](tg://user?id="+str(user_id)+")" 
     logger_text = f"""
-__**wilna ada request**__
+__**h \nada request cug 🗿**__
 
 **dari:** {message.chat.title} [`{message.chat.id}`]
 **nama:** {mention} hadeh
